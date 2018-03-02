@@ -105,14 +105,19 @@ body {
     vertical-align: middle;
 }
 
+.table-contacts>tbody>tr>td>span{
+    margin: 13px;
+}
+
 .table-contacts>tbody>tr>td:last-child {
     text-align: right
 }
 
 .contact-buttons {
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .contact-buttons .btn {
-    float: none;
+    flex-grow: 1;
 }

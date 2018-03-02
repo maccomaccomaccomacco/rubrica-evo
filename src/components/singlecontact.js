@@ -36,11 +36,13 @@ class SingleContactData extends React.Component {
     render() {
         return(
             <tr id={this.props.id}>
-                <td className="name col-xs-5 col-md-offset-1">{this.props.name}</td>
-                <td className="number col-xs-5">{this.props.number}</td>
-                <td className="contact-buttons btn-group col-xs-1">
-                    <button className="btn btn-default" onClick={this.props.handleToggleEdit}>Modifica</button>
-                    <button className="btn btn-default" onClick={this.onClickDeleteContact}>Cancella</button>
+                <td className="name col-xs-5 col-md-offset-1"><span>{this.props.name}</span></td>
+                <td className="number col-xs-5"><span>{this.props.number}</span></td>
+                <td className="col-xs-1">
+                    <div className="contact-buttons btn-group">
+                        <button className="btn btn-default" onClick={this.props.handleToggleEdit}>Modifica</button>
+                        <button className="btn btn-default" onClick={this.onClickDeleteContact}>Cancella</button>
+                    </div>
                 </td>
             </tr>
         )
@@ -80,9 +82,11 @@ class SingleContactForm extends React.Component {
             <tr>
                 <td className="name col-xs-5 col-md-offset-1"><input className="col-xs-5 form-control" type="text" value={this.state.name} onChange={this.onNameChange} /></td>
                 <td className="number col-xs-5"><input className="col-xs-5 form-control" type="text" value={this.state.number} onChange={this.onNumberChange} /></td>
-                <td className="contact-buttons col-xs-1 btn-group">
-                    <button className="btn btn-default" onClick={this.props.handleToggleEdit}>Annulla</button>
-                    <button className="btn btn-default" onClick={this.onClickSave}>Salva</button>
+                <td className="col-xs-1">
+                    <div className="contact-buttons btn-group">
+                        <button className="btn btn-default" onClick={this.props.handleToggleEdit}>Annulla</button>
+                        <button className="btn btn-default" onClick={this.onClickSave}>Salva</button>
+                    </div>
                 </td>
             </tr>
         )
