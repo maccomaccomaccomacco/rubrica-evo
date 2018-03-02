@@ -1,3 +1,5 @@
+import React from 'react';
+
 import PhonebookHeader from './phonebookheader.js';
 import AddContact from './addcontact.js';
 import PhonebookContent from './phonebookcontent.js';
