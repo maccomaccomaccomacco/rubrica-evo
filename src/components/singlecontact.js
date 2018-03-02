@@ -60,16 +60,20 @@ class SingleContactForm extends React.Component {
     }
 
     onNameChange = (event) => {
-        this.setState({
-            name: event.target.value
-        });
+        if(event.target.value.length <= 20){
+            this.setState({
+                name: event.target.value
+            });
+        }
     }
 
     onNumberChange = (event) => {
         const filteredInputNumber = event.target.value.replace(/[^0-9]/g, '');
-        this.setState({
-            number: filteredInputNumber
-        });
+        if(filteredInputNumber.length <= 20){
+            this.setState({
+                number: filteredInputNumber
+            });
+        }
     }
 
     onClickSave = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class AddContact extends React.Component {
     constructor(props) {
@@ -11,16 +10,20 @@ class AddContact extends React.Component {
     }
 
     onNameChange = (event) => {
-        this.setState({
-            name: event.target.value
-        });
+        if(event.target.value.length <= 20){
+            this.setState({
+                name: event.target.value
+            });
+        }
     }
 
     onNumberChange = (event) => {
         const filteredInputNumber = event.target.value.replace(/[^0-9]/g, '');
-        this.setState({
-            number: filteredInputNumber
-        });
+        if(filteredInputNumber.length <= 20){
+            this.setState({
+                number: filteredInputNumber
+            });
+        }
     }
 
     onClickAddContact = () => {
@@ -44,7 +47,10 @@ class AddContact extends React.Component {
                                 <input className="col-xs-5 form-control" type="text" placeholder={"Numero"} value={this.state.number} onChange={this.onNumberChange} />
                             </td>
                             <td className="col-xs-1">
-                                <input className="btn btn-default pull-right" type="submit" onClick={this.onClickAddContact} />
+                                <div className="contact-buttons btn-group">
+                                    <button className="btn btn-default" data-toggle="collapse" data-target="#new-contact" >Annulla</button>
+                                    <button className="btn btn-default" onClick={this.onClickAddContact}>Salva</button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>

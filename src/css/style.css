@@ -83,6 +83,7 @@ body {
 
 .new-contact .table td{
     border-top: none;
+    padding: 10px 20px;
 }
 
 .table-contacts {
